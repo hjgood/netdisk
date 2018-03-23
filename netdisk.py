@@ -4,8 +4,9 @@ from flask import Flask
 from flask import render_template
 from flask import request
 def get_linux_ip(ifname): # 获取本机IP地址
-	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-	return socket.inet_ntoa(fcntl.ioctl(s.fileno(), 0x8915, struct.pack('256s', ifname[:15]))[20:24])
+    import fcntl
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    return socket.inet_ntoa(fcntl.ioctl(s.fileno(), 0x8915, struct.pack('256s', ifname[:15]))[20:24])
 def get_win_ip():
     s = socket.gethostbyname(socket.gethostname())
     return s

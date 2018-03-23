@@ -24,5 +24,5 @@ if __name__ == '__main__':
         netdisk_ip = get_win_ip()
         app.run(host=netdisk_ip, port=8088, debug=True, threaded=True) # 测试模式 多线程
     if show_system_os() == 'Linux':
-        netdisk_ip = get_ip(b'ens160')
+        netdisk_ip = get_linux_ip(b'ens160')
         app.run(host=netdisk_ip, port=8088, debug=True, threaded=True) # 测试模式 多线程

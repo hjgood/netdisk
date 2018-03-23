@@ -10,4 +10,4 @@ app = Flask(__name__)
 
 if __name__ == '__main__':
 	netdisk_ip = get_ip(b'ens160')
-	app.run(host=netdisk_ip, port=8088, debug=True, threaded=True)
+	app.run(host=netdisk_ip, port=8088, debug=True, threaded=True) # 测试模式

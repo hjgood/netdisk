@@ -12,6 +12,10 @@ def show_system_os(): # 获取本机操作系统
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 if __name__ == '__main__':
 	netdisk_ip = get_ip(b'ens160')
 	app.run(host=netdisk_ip, port=8088, debug=True, threaded=True) # 测试模式 多线程

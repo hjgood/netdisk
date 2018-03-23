@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # _*_ codeing:utf-8 _*_
 import socket, fcntl, struct
 from flask import Flask

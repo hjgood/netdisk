@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="icon" href="/static/favicon.ico" />
 <head>
-
+    <meta charset="UTF-8">
+    <title>超简单文件上传</title>
 </head>
 <body>
-<h1>Hello World!!!!!</h1>
-<H3>{{ system_os }}</H3>
+<h1>简单文件上传</h1>
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type='file' name='file'>
+    <input type='submit' value="上传" >
+</form>
+<H3>文件列表：</h3>
+{%for file in files_name %}
+    {%if file != 'favicon.ico'%}
+        <a href='http://{{ netdisk_ip }}/static/{{ file }}'target="_blank" >{{ file }}</a><br>
+    {%endif%}
+{%endfor%}
+<h4>图片、文档点击链接可打开，软件包另存为到本地打开</h4>
+<h3>By HanJiang on {{ system_os }} System</h3>
 </body>
 </html>
+

@@ -1,42 +1,20 @@
 <!DOCTYPE html>
-
-
-
-
 <head>
-
     <meta charset="UTF-8">
-
     <title>超简单文件上传</title>
-
 </head>
-
-
 <body>
-
 <h1>简单文件上传</h1>
 <form action="/upload" method="post" enctype="multipart/form-data">
-
     <input type='file' name='file'>
-
     <input type='submit' value="上传" >
-
 </form>
-
-
 <H3>文件列表：</h3>
 {%for file in files_name %}
-
     {%if file != 'favicon.ico'%}
-
         <a href='http://127.0.0.1:8088/static/{{ file }}'target="_blank" >{{ file }}</a><br>
-
     {%endif%}
-
 {%endfor%}
-
 <H3>系统：{{ system_os }}</h3>
-
 </body>
-
 </html>
